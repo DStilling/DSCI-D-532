@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Movie Log</title>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+  <div class="content">
+    <H1>Update Movie Rating</H1>
+
+    <form action="/update/{{task.id}}" method="POST">
+      <input type="text" name="content" id="content" value="{{task.content}}" placeholder="update">
+      <input type="radio" id="rating" name="rating" value="Liked">
+      <label for="rating">Liked The Movie</label>
+      <select name="genre" id="genre">
+        <option value="Action">Action</option>
+        <option value="Comedy">Comedy</option>
+        <option value="Drama" selected>Drama</option>
+        <option value="N/A" selected>Choose A Genre</option>
+      </select>
+      <input type="submit" value="Update Rating">
+    </form>
+  </div>
+</div>
+{% endblock %}
